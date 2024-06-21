@@ -59,6 +59,8 @@ For example :
      in /home/user/level06/level06.php(4) : regexp code on line 1
     TRYING THIS STUFF  
 
-Now all we have do do is the same but with the getflag program, and we have our token.
+Now all we have to do is the same but with the getflag program, and we have our token.
 
     level06@SnowCrash:~$ echo 'TRYING THIS STUFF [x ${`getflag`} ]' > /tmp/test
+
+https://www.php.net/manual/en/language.operators.execution.php
