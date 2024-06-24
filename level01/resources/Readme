@@ -1,6 +1,0 @@
-cat /etc/passwd | grep flag01
-vagrant up
-vagrant ssh
-https://www.kali.org/tools/john/
-echo <token> > <file>
-john <file>
