@@ -19,7 +19,7 @@ Since we cannot install anything on the given VM, we have to create a VM where w
 Will output the decrypted password.
 
  
-## Security weakness
+## Security weaknesses
 John the Ripper exploits some key security weaknesses such as 
 
 -   **Weak Passwords**:

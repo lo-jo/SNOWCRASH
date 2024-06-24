@@ -5,7 +5,8 @@ Since we have to find the password that will log us with the flag00 account, let
     find / -user flag00 2> /dev/null
 
     cat /usr/sbin/john
-Will output what looks like a crypted password.
+The previous command ill output what looks like a crypted password.
+
 Online tools such as https://www.dcode.fr/caesar-cipher are able to detect encryption patterns and a simple research will lead us to believe that this is a Caesar cipher encryption.
 The ceaser cipher replaces each letter by another letter located a little further in the alphabet. Here it is shifted by 11.
 `c` becomes `n`
@@ -14,7 +15,7 @@ The ceaser cipher replaces each letter by another letter located a little furthe
 and so on.
  
 
-## Security weakness
+## Security weaknesses
 
 -   **Limited Key Space**: The Caesar cipher uses a fixed shift of the alphabet, typically 0 to 25 for the English alphabet. This means there are only 26 possible keys. With such a small key space, a brute-force attack (trying all possible keys) is trivial and can be done almost instantly even by hand.
     
