@@ -15,6 +15,8 @@ Since we cannot install anything on the given VM, we have to create a VM where w
 
     echo <token> > <file>
 
+    john <file>
+
     john <file> --show
 Will output the decrypted password.
 

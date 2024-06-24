@@ -1,7 +1,16 @@
-Run the executable in the machine
-output "exploit me"
-gdb level03
+# LEVEL 03
+
+When we run the executable level03 in the machine (it doesn't accept any arguments)
+it only outputs "exploit me".
+
+We can use GDB to try to decompile the executable level03 by doing:
+
+```
 disassemble main
+```
+
+We then
+We get the following output:
 Dump of assembler code for function main:
    0x080484a4 <+0>:     push   %ebp
    0x080484a5 <+1>:     mov    %esp,%ebp
@@ -29,8 +38,9 @@ Dump of assembler code for function main:
    0x080484fe <+90>:    call   0x80483b0 <system@plt>
    0x08048503 <+95>:    leave  
 ---Type <return> to continue, or q <return> to quit---
-   0x08048504 <+96>:    ret    
+   0x08048504 <+96>:    ret
 
+   We can try 
 
    https://dogbolt.org/
 

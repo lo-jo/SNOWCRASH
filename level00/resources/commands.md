@@ -5,7 +5,7 @@ Since we have to find the password that will log us with the flag00 account, let
     find / -user flag00 2> /dev/null
 
     cat /usr/sbin/john
-The previous command ill output what looks like a crypted password.
+The previous command will output what looks like a crypted password.
 
 Online tools such as https://www.dcode.fr/caesar-cipher are able to detect encryption patterns and a simple research will lead us to believe that this is a Caesar cipher encryption.
 The ceaser cipher replaces each letter by another letter located a little further in the alphabet. Here it is shifted by 11.
