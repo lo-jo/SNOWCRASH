@@ -66,8 +66,7 @@ For instance:
 
 The use of the `/e` modifier in `preg_replace` is highly insecure as it allows execution of arbitrary PHP code, which means that whatever is parsed is transformed into php code. This can lead to security vulnerabilities such as code injection if the input is not properly sanitized.
 
-Hence, the string remplacement can be evaluated as PHP code, we can execute commands to see if we get lucky:
-For example :
+Hence, we can execute commands, for example :
 
     level06@SnowCrash:~$ echo 'TRYING THIS STUFF [x ${`ls -al`} ]' > /tmp/test
     level06@SnowCrash:~$ ./level06 /tmp/test
