@@ -6,6 +6,7 @@ When we examine what's inside the working directory, we get the following files:
     level06  level06.php
 
 When analyzing the executable file "level06" we see that it takes a file as argument:
+
     level06@SnowCrash:~$ ./level06
     PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
 
